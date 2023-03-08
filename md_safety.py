@@ -76,7 +76,7 @@ class Safety(object):
             brake_bool_msg = Bool(data=True)
             brake_bool_pub.publish(brake_bool_msg)
 
-            brake_pub = rospy.Publisher("brake", AckermannDriveStamped, queue_size=10)
+            brake_pub = rospy.Publisher("vesc/high_level/ackermann_cmd_mux/input/nav_0", AckermannDriveStamped, queue_size=10)
             drive = AckermannDrive(speed=0)
             brake_msg = AckermannDriveStamped(drive=drive)
             brake_pub.publish(brake_msg)
