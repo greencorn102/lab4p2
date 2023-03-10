@@ -3,7 +3,6 @@
     <node pkg="black_car" name="real_car_lane_follow" type="real_car_lane_follow" output="screen">
     </node>
     <node pkg="md_roslab" name="md_safety" type="md_safety.py" output="screen">
-  </node>
-
+    </node>
     <node name="ros_rec" pkg="rosbag" type="record" output="screen" args="record -o /home/green/md_ws/md --all"/>
 </launch>
