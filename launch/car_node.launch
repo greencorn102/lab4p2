@@ -4,5 +4,7 @@
     </node>
     <node pkg="md_roslab" name="md_safety" type="md_safety.py" output="screen">
     </node>
-    <node name="ros_rec" pkg="rosbag" type="record" output="screen" args="record -o /home/green/md_ws/md --all"/>
+    <node pkg="md_roslab" name="followwall" type="followwall.py" output="screen">
+    </node>
+    <!--node name="ros_rec" pkg="rosbag" type="record" output="screen" args="record -o /home/green/md_ws/md --all"/-->
 </launch>
