@@ -74,7 +74,7 @@ def callback(data):
         sp=0.5
     ###print('a:',a,'b:',b,'Dt+1:',D_t1,'error:',err,'angle:',ud)
     
-    drive_pub = rospy.Publisher("nav", AckermannDriveStamped, queue_size=10)
+    drive_pub = rospy.Publisher("/vesc/high_level/ackermann_cmd_mux/input/nav_0", AckermannDriveStamped, queue_size=10)
     #drive = AckermannDrive(steering_angle=u)
     drive_msg = AckermannDriveStamped()
     drive_msg.header.stamp = rospy.Time.now()
