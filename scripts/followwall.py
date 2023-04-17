@@ -56,6 +56,7 @@ def callback(data):
     c=data.ranges[540] # straight direction
     alpha=np.arctan((a*np.cos(.7854)-b)/a*np.sin(.7854)) # 45 deg in rad
     D_t = b*np.cos(alpha)
+    print(D_t)
     dt_pub = rospy.Publisher("aaa", Float32, queue_size=10)
     dt_pub.publish(D_t)
     D_t1 = D_t + 0.75*np.sin(alpha) # L
