@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 from __future__ import print_function
 import sys
 import math
@@ -6,7 +6,7 @@ import rospy
 
 from sensor_msgs.msg import Image, LaserScan
 from ackermann_msgs.msg import AckermannDriveStamped, AckermannDrive
-from std_msgs.msg import String
+from std_msgs.msg import String, Float32
 
 import numpy as np
 
@@ -56,6 +56,8 @@ def callback(data):
     c=data.ranges[540] # straight direction
     alpha=np.arctan((a*np.cos(.7854)-b)/a*np.sin(.7854)) # 45 deg in rad
     D_t = b*np.cos(alpha)
+    dt_pub = rospy.Publisher("aaa", Float32, queue_size=10)
+    dt_pub.publish(D_t)
     D_t1 = D_t + 0.75*np.sin(alpha) # L
     err = D_t1 - 0.85
     u=pid(D_t1)
