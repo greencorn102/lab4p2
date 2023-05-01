@@ -29,7 +29,7 @@ def callback(data):
          if (data.ranges[l]<1):
              ang=-0.785
 
-    drive_pub = rospy.Publisher("nav", AckermannDriveStamped, queue_size=10)
+    drive_pub = rospy.Publisher("/vesc/high_level/ackermann_cmd_mux/input/nav_0", AckermannDriveStamped, queue_size=10)
     drive_msg = AckermannDriveStamped()
     drive_msg.header.stamp = rospy.Time.now()
     drive_msg.header.frame_id = "laser"
