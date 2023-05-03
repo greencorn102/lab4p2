@@ -34,7 +34,7 @@ def callback(data):
     drive_msg.header.stamp = rospy.Time.now()
     drive_msg.header.frame_id = "laser"
     drive_msg.drive.steering_angle = ang #-0.785+(jj-405)*0.0058
-    drive_msg.drive.speed = 1
+    drive_msg.drive.speed = 0.75
     drive_pub.publish(drive_msg)
 
 def listener():
