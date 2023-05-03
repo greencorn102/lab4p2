@@ -14,7 +14,7 @@ import numpy as np
 def callback(data):
     gp=0
     for j in range(405,675): 
-        if ((data.ranges[j]>3)&(data.ranges[j+1]>3)):
+        if ((data.ranges[j]>2)&(data.ranges[j+1]>2)):
             gp=gp+1
             if (gp>=15):
                 jj=round((j+j+gp)/2)
