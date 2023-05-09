@@ -22,12 +22,12 @@ def callback(data):
                 break
     for k in range(0,539): #404
          if (data.ranges[k]<1):
-             ang=0.785
+             anng=0.785
 
 
     for l in range(540,1079): #676
          if (data.ranges[l]<1):
-             ang=-0.785
+             anng=-0.785
 
     drive_pub = rospy.Publisher("/vesc/high_level/ackermann_cmd_mux/input/nav_0", AckermannDriveStamped, queue_size=10)
     drive_msg = AckermannDriveStamped()
